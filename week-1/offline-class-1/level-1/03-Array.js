@@ -18,8 +18,9 @@ pushExample([1, 2, 3], 4);
 function popExample(arr) {
   console.log("Original Array:", arr);
 
-  arr.pop();
+  let poped_element=arr.pop();
   console.log("After pop:", arr);
+  console.log("poped element:",poped_element)
 }
 popExample([1, 2, 3]);
 

@@ -14,7 +14,49 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+
+  //using reduce function
+
+  const total_spend = transactions.reduce((acc,curr)=>{
+
+   //destructuring object
+
+   //curr represent each object in transcation
+
+   const {category , price} = curr;
+
+   if (!acc[category]){
+    acc[category]= price;
+   }
+   else{
+    acc[category] = acc[category]+price;
+   }
+
+   return acc;
+
+
+  },{});
+
+  console.log(total_spend);
+
+  const total_spend_array = Object.entries(total_spend);
+
+  let resultArray  = [];
+
+  for (let i = 0; i < total_spend_array.length; i++){
+    res_obj={}
+    res_obj.category=total_spend_array[i][0];
+    res_obj.totalSpent = total_spend_array[i][1];
+
+    resultArray.push(res_obj);
+  }
+
+  return resultArray;
 }
+
+const transactions = [];
+
+console.log(calculateTotalSpentByCategory(transactions));
+
 
 module.exports = calculateTotalSpentByCategory;
