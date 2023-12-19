@@ -54,9 +54,9 @@ function calculateTotalSpentByCategory(transactions) {
   return resultArray;
 }
 
-const transactions = [];
+// const transactions = [];
 
-console.log(calculateTotalSpentByCategory(transactions));
+// console.log(calculateTotalSpentByCategory(transactions));
 
 
 module.exports = calculateTotalSpentByCategory;
